@@ -23,3 +23,18 @@ public:
             tempatParkirTersedia.push(i);
         }
     }
+
+    void tambahKendaraan(const string& platNomor, const string& namaPemilik, const string& jenisKendaraan) {
+        if (tempatParkirTersedia.empty()) {
+            cout << "Tidak ada tempat parkir yang tersedia." << endl;
+            return;
+        }
+
+        int spot = tempatParkirTersedia.top();
+        tempatParkirTersedia.pop();
+
+        Kendaraan kendaraan = {platNomor, namaPemilik, jenisKendaraan};
+        kendaraanTerparkir.push_back(kendaraan);
+
+        cout << "Kendaraan ditambahkan. Parkir di tempat: " << spot << endl;
+    }
