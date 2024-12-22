@@ -38,3 +38,17 @@ public:
 
         cout << "Kendaraan ditambahkan. Parkir di tempat: " << spot << endl;
     }
+
+    //4.Ali
+    void tampilkanKendaraanTerparkir() {
+      if (kendaraanTerparkir.empty()) {
+          cout << "Tidak ada kendaraan yang sedang terparkir." << endl;
+          return;
+      }
+
+      cout << "Kendaraan yang sedang terparkir:" << endl;
+      for (const auto& kendaraan : kendaraanTerparkir) {
+          cout << "Plat Nomor: " << kendaraan.platNomor << ", Pemilik: " << kendaraan.namaPemilik 
+               << ", Jenis: " << kendaraan.jenisKendaraan << endl;
+      }
+    }
