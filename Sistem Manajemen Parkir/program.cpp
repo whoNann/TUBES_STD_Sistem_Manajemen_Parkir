@@ -52,3 +52,45 @@ public:
                << ", Jenis: " << kendaraan.jenisKendaraan << endl;
       }
     }
+
+    //5.Ardhian
+     void tampilkanMenu() {
+      cout << "Menu Sistem Manajemen Parkir:" << endl;
+      cout << "1. Tambah Kendaraan" << endl;
+      cout << "2. Hapus Kendaraan" << endl;
+      cout << "3. Cari Kendaraan" << endl;
+      cout << "4. Tampilkan Tempat Parkir Tersedia" << endl;
+      cout << "5. Tampilkan Kendaraan Terparkir" << endl;
+      cout << "6. Keluar" << endl;
+      }
+
+    int main() {
+    int totalTempat;
+      cout << "Masukkan total jumlah tempat parkir: ";
+      cin >> totalTempat;
+
+      SistemManajemenParkir smp(totalTempat);
+
+      int pilihan;
+      string platNomor, namaPemilik, jenisKendaraan;
+
+      do {
+          smp.tampilkanMenu();
+          cout << "Masukkan pilihan Anda: ";
+          cin >> pilihan;
+
+          switch (pilihan) {
+              case 1:
+                  cout << "Masukkan plat nomor: ";
+                  cin >> platNomor;
+                  cout << "Masukkan nama pemilik: ";
+                  cin >> namaPemilik;
+                  cout << "Masukkan jenis kendaraan (motor/mobil): ";
+                  cin >> jenisKendaraan;
+                  smp.tambahKendaraan(platNomor, namaPemilik, jenisKendaraan);
+                  break;
+              case 2:
+                  cout << "Masukkan plat nomor untuk dihapus: ";
+                  cin >> platNomor;
+                  smp.hapusKendaraan(platNomor);
+                  break;
