@@ -38,6 +38,31 @@ public:
 
         cout << "Kendaraan ditambahkan. Parkir di tempat: " << spot << endl;
     }
+//4. marsell
+    void hapusKendaraan(const string& platNomor) {
+          for (auto it = kendaraanTerparkir.begin(); it != kendaraanTerparkir.end(); ++it) {
+              if (it->platNomor == platNomor) {
+              int harga = (it->jenisKendaraan == "motor") ? 3000 : 5000; // Harga parkir
+              cout << "Kendaraan dihapus." << endl;
+              cout << "Total biaya parkir: " << harga << " IDR" << endl;
+              kendaraanTerparkir.erase(it);
+              tempatParkirTersedia.push(totalTempat - kendaraanTerparkir.size());
+              return;
+          }
+      }
+      cout << "Kendaraan tidak ditemukan." << endl;
+  }
+//3. resi
+void cariKendaraan(const string& platNomor) {
+      for (const auto& kendaraan : kendaraanTerparkir) {
+          if (kendaraan.platNomor == platNomor) {
+              cout << "Kendaraan ditemukan: " << kendaraan.platNomor << ", Pemilik: " << kendaraan.namaPemilik 
+                   << ", Jenis: " << kendaraan.jenisKendaraan << endl;
+              return;
+          }
+      }
+      cout << "Kendaraan tidak ditemukan." << endl;
+  }
 
     //4.Ali
     void tampilkanKendaraanTerparkir() {
