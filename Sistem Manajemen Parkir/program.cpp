@@ -53,17 +53,6 @@ public:
       }
       cout << "Kendaraan tidak ditemukan." << endl;
   }
-//3. resi
-void cariKendaraan(const string& platNomor) {
-      for (const auto& kendaraan : kendaraanTerparkir) {
-          if (kendaraan.platNomor == platNomor) {
-              cout << "Kendaraan ditemukan: " << kendaraan.platNomor << ", Pemilik: " << kendaraan.namaPemilik 
-                   << ", Jenis: " << kendaraan.jenisKendaraan << endl;
-              return;
-          }
-      }
-      cout << "Kendaraan tidak ditemukan." << endl;
-  }
 
     //4.Ali
     void tampilkanKendaraanTerparkir() {
