@@ -1,3 +1,4 @@
+// Nanta
 #include <iostream>
 #include <stack>
 #include <list>
@@ -38,7 +39,7 @@ public:
 
         cout << "Kendaraan ditambahkan. Parkir di tempat: " << spot << endl;
     }
-//4. marsell
+//2. marsell
     void hapusKendaraan(const string& platNomor) {
           for (auto it = kendaraanTerparkir.begin(); it != kendaraanTerparkir.end(); ++it) {
               if (it->platNomor == platNomor) {
@@ -119,3 +120,27 @@ void cariKendaraan(const string& platNomor) {
                   cin >> platNomor;
                   smp.hapusKendaraan(platNomor);
                   break;
+// Nanta
+              case 3:
+                  cout << "Masukkan plat nomor untuk dicari: ";
+                  cin >> platNomor;
+                  smp.cariKendaraan(platNomor);
+                  break;
+              case 4:
+                  smp.tampilkanTempatParkirTersedia();
+                  break;
+              case 5:
+                  smp.tampilkanKendaraanTerparkir();
+                  break;
+              case 6:
+                  cout << "Keluar..." << endl;
+                  break;
+              default:
+                  cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+          }
+      } while (pilihan != 6);
+
+      return 0;
+  }
+  
+
