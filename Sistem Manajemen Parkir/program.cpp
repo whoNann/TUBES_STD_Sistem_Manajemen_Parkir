@@ -147,6 +147,6 @@ int main() {
       } while (pilihan != 6);
 
       return 0;
-  }
+}
   
 
