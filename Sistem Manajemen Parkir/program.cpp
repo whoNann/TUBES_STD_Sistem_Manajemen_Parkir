@@ -43,16 +43,16 @@ public:
     void hapusKendaraan(const string& platNomor) {
           for (auto it = kendaraanTerparkir.begin(); it != kendaraanTerparkir.end(); ++it) {
               if (it->platNomor == platNomor) {
-              int harga = (it->jenisKendaraan == "motor") ? 3000 : 5000; // Harga parkir
-              cout << "Kendaraan dihapus." << endl;
-              cout << "Total biaya parkir: " << harga << " IDR" << endl;
-              kendaraanTerparkir.erase(it);
-              tempatParkirTersedia.push(totalTempat - kendaraanTerparkir.size());
-              return;
+                  int harga = (it->jenisKendaraan == "motor") ? 3000 : 5000; // Harga parkir
+                  cout << "Kendaraan dihapus." << endl;
+                  cout << "Total biaya parkir: " << harga << " IDR" << endl;
+                  kendaraanTerparkir.erase(it);
+                  tempatParkirTersedia.push(totalTempat - kendaraanTerparkir.size());
+                  return;
+              }
           }
-      }
-      cout << "Kendaraan tidak ditemukan." << endl;
-  }
+          cout << "Kendaraan tidak ditemukan." << endl;
+    }
     //3. Resi
     void cariKendaraan(const string& platNomor) {
       for (const auto& kendaraan : kendaraanTerparkir) {
@@ -63,7 +63,11 @@ public:
           }
       }
       cout << "Kendaraan tidak ditemukan." << endl;
-  }
+    }
+
+    void tampilkanTempatParkirTersedia() {
+        cout << "Tempat parkir yang tersedia: " << tempatParkirTersedia.size() << endl;
+    }
   
     //4.Ali
     void tampilkanKendaraanTerparkir() {
@@ -89,54 +93,56 @@ public:
       cout << "5. Tampilkan Kendaraan Terparkir" << endl;
       cout << "6. Keluar" << endl;
       }
+};
 
-    int main() {
+int main() {
     int totalTempat;
-      cout << "Masukkan total jumlah tempat parkir: ";
-      cin >> totalTempat;
+    cout << "Masukkan total jumlah tempat parkir: ";
+    cin >> totalTempat;
 
-      SistemManajemenParkir smp(totalTempat);
+    SistemManajemenParkir smp(totalTempat);
 
-      int pilihan;
-      string platNomor, namaPemilik, jenisKendaraan;
+    int pilihan;
+    string platNomor, namaPemilik, jenisKendaraan;
 
-      do {
-          smp.tampilkanMenu();
-          cout << "Masukkan pilihan Anda: ";
-          cin >> pilihan;
+    do {
+        smp.tampilkanMenu();
+        cout << "Masukkan pilihan Anda: ";
+        cin >> pilihan;
 
-          switch (pilihan) {
-              case 1:
-                  cout << "Masukkan plat nomor: ";
-                  cin >> platNomor;
-                  cout << "Masukkan nama pemilik: ";
-                  cin >> namaPemilik;
-                  cout << "Masukkan jenis kendaraan (motor/mobil): ";
-                  cin >> jenisKendaraan;
-                  smp.tambahKendaraan(platNomor, namaPemilik, jenisKendaraan);
-                  break;
+        switch (pilihan) {
+            case 1:
+                cout << "Masukkan plat nomor: ";
+                cin >> platNomor;
+                cout << "Masukkan nama pemilik: ";
+                cin >> namaPemilik;
+                cout << "Masukkan jenis kendaraan (motor/mobil): ";
+                cin >> jenisKendaraan;
+                smp.tambahKendaraan(platNomor, namaPemilik, jenisKendaraan);
+                break;
               case 2:
-                  cout << "Masukkan plat nomor untuk dihapus: ";
-                  cin >> platNomor;
-                  smp.hapusKendaraan(platNomor);
-                  break;
+                cout << "Masukkan plat nomor untuk dihapus: ";
+                cin >> platNomor;
+                smp.hapusKendaraan(platNomor);
+                break;
 // Nanta
               case 3:
-                  cout << "Masukkan plat nomor untuk dicari: ";
-                  cin >> platNomor;
-                  smp.cariKendaraan(platNomor);
-                  break;
+                cout << "Masukkan plat nomor untuk dicari: ";
+                cin >> platNomor;
+                smp.cariKendaraan(platNomor);
+                break;
               case 4:
-                  smp.tampilkanTempatParkirTersedia();
-                  break;
+                smp.tampilkanTempatParkirTersedia();
+                break;
               case 5:
-                  smp.tampilkanKendaraanTerparkir();
-                  break;
+                smp.tampilkanKendaraanTerparkir();
+                break;
               case 6:
-                  cout << "Keluar..." << endl;
-                  break;
+                cout << " Terimakasih sudah menggunakan sistem kami:) " << endl;
+                cout << " Sampai jumpa:D " << endl;
+                break;
               default:
-                  cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+                cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
           }
       } while (pilihan != 6);
 
