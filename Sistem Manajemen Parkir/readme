@@ -1,1 +1,34 @@
+latar belakang:
+Manajemen parkir yang efisien memerlukan sistem yang mampu mencatat, membaca, memperbarui, dan menghapus data kendaraan secara efektif. Operasi CRUD (Create, Read, Update, Delete) dalam sistem ini dapat diimplementasikan menggunakan struktur data seperti stack dan linked list.
+Stack cocok untuk parkir bertingkat dengan prinsip LIFO (Last In, First Out), sementara linked list menawarkan fleksibilitas dalam pengelolaan data kendaraan dengan lokasi acak. Pendekatan ini memberikan efisiensi dan fleksibilitas tinggi, meskipun memerlukan pengelolaan data yang baik untuk menjaga kinerja sistem.
 
+fitur-fitur:
+- Tambah Kendaraan
+Digunakan ketika pengguna menambahkan kendaraan baru ke tempat parkir yang memuat informasi plat, nomor kendaraan dan jenis kendaraan. dan sistem otomatis menambahkan kendaran ke tempat parkir.
+- Hapus Kendaraan
+Digunakan untuk menghapus kendaraan  dari daftar parkir berdasarkan plat nomor, setelah terhapus akan muncul total biaya parkir dan tempat parkir akan tersedia kembali
+- Cari Kendaraan
+Mencari kendaraan berdasarkan plat nomor, jika ada maka akan ditampilkan informasi kendaraan, jika tidak ada sistem akan print pesan “Kendaraan tidak ditemukan”
+- Tampilkan tempat parkir tersedia, dimana Sistem akan menampilkan tempat parkir yang tersedia
+- Tampilkan kendaraan parkir, dimana Sistem akan menampilkan daftar kendaraan yang  terparkir yang memuat informasi kendaraan
+- Menu Keluar, Ketika pengguna memilih menu ini, maka akan keluar dari program.
+
+jobdesk:
+1. Muhammad Rifqi Al Baqi Ananta (2311104005):
+- search materi
+- tambahKendaraan ()
+- sebagian  main ()
+2. Marsella Dwi Julianti (2311104004):
+- Latar belakang
+- fitur hapusKendaraan ()
+3. Muhammad Mahrus Ali (2311104006):
+- Penjelasan materi yang dipakai
+- tampilkanTempatParkirTersedia ()
+- tampilkanKendaraanTerparkir ()
+4. Resita Istania Purwanto (2311104037):
+- Fitur
+- fitur cariKendaraan ()
+5. Ardhian Dwi Saputra (2311104040):
+- Flowchart
+- fitur tampilan menu()
+- sebagian main ()
